@@ -1,5 +1,5 @@
 {% set name = "flake8-type-checking" %}
-{% set version = "2.4.2" %}
+{% set version = "2.5.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 468a7c91ca6ebe58c4af6836dda3bfeba7bfb7c0b5f724baf5024ad5fda0504c
+  sha256: bfc51dd6e09a26662ab19191f44102f0606377ec0271a0e764ae993346a206d6
 
 build:
   number: 0
