@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 1a14f300c8e32183cef95798b86a650dc38463664ea10b0bf0884115b47d4cfe
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,12 +19,12 @@ requirements:
   host:
     - pip
     - poetry-core >=1.0.0
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - aspy.refactor-imports
     - classify-imports
     - flake8
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -36,6 +36,7 @@ test:
     - flake8
     - m2-grep  # [win]
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/snok/flake8-type-checking
