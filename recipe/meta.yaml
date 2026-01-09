@@ -21,7 +21,6 @@ requirements:
     - poetry-core >=1.0.0
     - python {{ python_min }}
   run:
-    - aspy.refactor-imports
     - classify-imports
     - flake8
     - python >={{ python_min }}
