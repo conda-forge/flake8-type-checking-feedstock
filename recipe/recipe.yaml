@@ -32,7 +32,9 @@ tests:
       imports:
         - flake8_type_checking
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - flake8
