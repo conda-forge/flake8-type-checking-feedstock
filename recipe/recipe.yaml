@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: flake8-type-checking
-  version: "3.2.0"
+  version: "3.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 0532ac5e8c7d5edf64861731c4bb72a86c9004cf46fe73a1f7bd8dc83b840e92
+  sha256: e0b9b1ffc824aaa1e10b9f7b5f0f040a331062b16ca0c499257bb881c215b83a
 
 build:
   number: 0
@@ -32,7 +32,9 @@ tests:
       imports:
         - flake8_type_checking
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - flake8
